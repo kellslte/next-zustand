@@ -22,8 +22,7 @@ export default function Column({
   const filteredTasks = useMemo(() => tasks.filter(task => task.status === status), [tasks, status])
 
   const handleDrop = function(e: React.DragEvent<HTMLDivElement>){
-    if(!draggedTask) return;
-    updateTask(draggedTask, status);
+    if(draggedTask) updateTask(draggedTask, status);
     dragTask(null);
   }
 
